@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsuramaPolizas - Seguros Digitales</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><i class="fas fa-shield-alt"></i> InsuramaPolizas</h2>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="#inicio" class="nav-link active" data-section="inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#productos" class="nav-link" data-section="productos">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#cotizaciones" class="nav-link" data-section="cotizaciones">Cotizaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#asistencia" class="nav-link" data-section="asistencia">Asistencia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link" data-section="contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#login" class="nav-link login-btn" data-section="login">
+                            <i class="fas fa-user"></i> Login
+                        </a>
+                    </li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <!-- Sección de Inicio -->
+        <section id="inicio" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Bienvenido</h1>
+                    <p>En Insurama creemos que proteger lo que más valoras no debería ser complicado. Por eso, transformamos el mundo de los seguros en una experiencia 100% digital, rápida y sin trámites innecesarios. Desde tu celular puedes cotizar, contratar y gestionar tus seguros en minutos, con total transparencia y soporte las 24 horas.</p>
+                    <p>🌍 Estamos presentes en varios países, acompañando a miles de usuarios que confían en nosotros para proteger su vida, sus bienes y sus dispositivos.</p>
+                    <p>💡 Con Insurama, el seguro se adapta a ti: simple, confiable y totalmente online.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showSection('cotizaciones')">
+                            <i class="fas fa-calculator"></i> Cotizar Ahora
+                        </button>
+                        <button class="btn btn-secondary" onclick="showSection('productos')">
+                            <i class="fas fa-eye"></i> Ver Pólizas
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <i class="fas fa-shield-alt hero-icon"></i>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="container">
+                    <h2>¿Por qué elegir Insurama?</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>100% Digital</h3>
+                            <p>Todo desde tu celular: cotiza, contrata y gestiona tus pólizas en minutos, sin papeleos.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>Soporte 24/7</h3>
+                            <p>Atención inmediata las 24 horas del día, los 7 días de la semana, totalmente online.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-globe"></i>
+                            <h3>Presencia Global</h3>
+                            <p>Estamos en varios países protegiendo a miles de usuarios que confían en nosotros.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Transparencia Total</h3>
+                            <p>Sin letra pequeña ni sorpresas. Todo claro y transparente desde el primer momento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Login -->
+        <section id="login" class="section">
+            <div class="login-container">
+                <div class="auth-form">
+                    <!-- Pestañas -->
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" data-tab="login">
+                            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                        </button>
+                        <button class="auth-tab" data-tab="register">
+                            <i class="fas fa-user-plus"></i> Registrarse
+                        </button>
+                    </div>
+
+                    <!-- Formulario de Login -->
+                    <div id="login-form" class="tab-content active">
+                        <h2><i class="fas fa-user-circle"></i> Iniciar Sesión</h2>
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" required>
+                                <i class="fas fa-envelope input-icon"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Contraseña</label>
+                                <input type="password" id="password" name="password" required>
+                                <i class="fas fa-lock input-icon"></i>
+                            </div>
+                            <div class="form-options">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="remember">
+                                    <span class="checkmark"></span>
+                                    Recordarme
+                                </label>
+                                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Formulario de Registro -->
+                    <div id="register-form" class="tab-content">
+                        <h2><i class="fas fa-user-plus"></i> Crear Cuenta</h2>
+                        <form id="registerForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">Nombre</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                    <i class="fas fa-user input-icon"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Apellido</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                    <i class="fas fa-user input-icon"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerEmail">Correo Electrónico</label>
+                                <input type="email" id="registerEmail" name="registerEmail" required>
+                                <i class="fas fa-envelope input-icon"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <i class="fas fa-phone input-icon"></i>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="registerPassword">Contraseña</label>
+                                    <input type="password" id="registerPassword" name="registerPassword" required>
+                                    <i class="fas fa-lock input-icon"></i>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirmar Contraseña</label>
+                                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                    <i class="fas fa-lock input-icon"></i>
+                                </div>
+                            </div>
+                            <div class="form-options">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="acceptTerms" required>
+                                    <span class="checkmark"></span>
+                                    Acepto los <a href="#" class="terms-link">términos y condiciones</a>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-user-plus"></i> Crear Cuenta
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Productos -->
+        <section id="productos" class="section">
+            <div class="container">
+                <h2>Nuestras Pólizas Digitales</h2>
+                <p class="section-subtitle">Protege tus dispositivos y productos digitales con pólizas diseñadas para la era digital</p>
+                
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Póliza para Celulares</h3>
+                        <p>Protege tu smartphone contra robos, daños accidentales y fallas técnicas.</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Cobertura por robo</li>
+                            <li><i class="fas fa-check"></i> Daños por caídas y líquidos</li>
+                            <li><i class="fas fa-check"></i> Reemplazo inmediato</li>
+                            <li><i class="fas fa-check"></i> Respaldo de datos</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="showSection('cotizaciones')">Cotizar</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Póliza para Laptops</h3>
+                        <p>Asegura tu computadora portátil contra daños, robos y fallas de hardware.</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Protección total</li>
+                            <li><i class="fas fa-check"></i> Soporte técnico 24/7</li>
+                            <li><i class="fas fa-check"></i> Recuperación de datos</li>
+                            <li><i class="fas fa-check"></i> Cobertura internacional</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="showSection('cotizaciones')">Cotizar</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <i class="fas fa-tablet-alt"></i>
+                        </div>
+                        <h3>Póliza para Tablets</h3>
+                        <p>Mantén tu tablet protegida con cobertura completa para uso personal y profesional.</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Daños accidentales</li>
+                            <li><i class="fas fa-check"></i> Protección contra robo</li>
+                            <li><i class="fas fa-check"></i> Fallas de pantalla</li>
+                            <li><i class="fas fa-check"></i> Accesorios incluidos</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="showSection('cotizaciones')">Cotizar</button>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <h3>Póliza para Dispositivos</h3>
+                        <p>Protege todos tus gadgets: auriculares, smartwatches, cámaras y más.</p>
+                        <ul class="product-features">
+                            <li><i class="fas fa-check"></i> Múltiples dispositivos</li>
+                            <li><i class="fas fa-check"></i> Cobertura flexible</li>
+                            <li><i class="fas fa-check"></i> Reparación express</li>
+                            <li><i class="fas fa-check"></i> Sin deducibles</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="showSection('cotizaciones')">Cotizar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Cotizaciones -->
+        <section id="cotizaciones" class="section">
+            <div class="container">
+                <h2>Cotiza tu Dispositivo</h2>
+                <p class="section-subtitle">Protege tu tecnología con una cotización personalizada en minutos</p>
+                
+                <div class="quote-form-container">
+                    <form id="quoteForm" class="quote-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tipoDispositivo">Tipo de Dispositivo</label>
+                                <select id="tipoDispositivo" name="tipoDispositivo" required>
+                                    <option value="">Selecciona tu dispositivo</option>
+                                    <option value="celular">Celular / Smartphone</option>
+                                    <option value="laptop">Laptop / Computadora Portátil</option>
+                                    <option value="tablet">Tablet / iPad</option>
+                                    <option value="smartwatch">Smartwatch / Reloj Inteligente</option>
+                                    <option value="auriculares">Auriculares / AirPods</option>
+                                    <option value="camara">Cámara Digital</option>
+                                    <option value="consola">Consola de Videojuegos</option>
+                                    <option value="otros">Otros Dispositivos</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="marca">Marca del Dispositivo</label>
+                                <input type="text" id="marca" name="marca" placeholder="Ej: Apple, Samsung, HP..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="modelo">Modelo</label>
+                                <input type="text" id="modelo" name="modelo" placeholder="Ej: iPhone 15, Galaxy S24..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="valorDispositivo">Valor del Dispositivo (USD)</label>
+                                <input type="number" id="valorDispositivo" name="valorDispositivo" placeholder="1000" min="50" max="10000" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre Completo</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailCotizacion">Correo Electrónico</label>
+                                <input type="email" id="emailCotizacion" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cobertura">Tipo de Cobertura</label>
+                                <select id="cobertura" name="cobertura" required>
+                                    <option value="">Selecciona cobertura</option>
+                                    <option value="basica">Básica (Robo y Daños)</option>
+                                    <option value="completa">Completa (Todo Riesgo)</option>
+                                    <option value="premium">Premium (Cobertura Total + Extras)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Periodo de Pago</label>
+                                <div class="radio-group" id="periodoPago">
+                                    <label class="radio-option">
+                                        <input type="radio" name="periodo" id="periodoMensual" value="mensual" checked>
+                                        <span>Mensual</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="periodo" id="periodoAnual" value="anual">
+                                        <span>Anual</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="detalles">Información Adicional</label>
+                            <textarea id="detalles" name="detalles" rows="3" placeholder="¿Tienes algún accesorio especial? ¿Uso profesional? Cuéntanos más detalles..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-calculator"></i> Obtener Cotización
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Asistencia -->
+        <section id="asistencia" class="section">
+            <div class="container">
+                <h2>Centro de Asistencia</h2>
+                <p class="section-subtitle">Estamos aquí para ayudarte cuando más nos necesites</p>
+                
+                <div class="assistance-grid">
+                    <div class="assistance-card">
+                        <div class="assistance-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Línea de Emergencia</h3>
+                        <p>Disponible 24/7 para atender tus emergencias</p>
+                        <div class="contact-info">
+                            <strong>01-800-SEGUROS</strong>
+                            <span>(01-800-734-8767)</span>
+                        </div>
+                    </div>
+
+                    <div class="assistance-card">
+                        <div class="assistance-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Chat en Línea</h3>
+                        <p>Chatea con nuestros agentes especializados</p>
+                        <button class="btn btn-primary" onclick="openChat()">
+                            <i class="fas fa-comment"></i> Iniciar Chat
+                        </button>
+                    </div>
+
+                    <div class="assistance-card">
+                        <div class="assistance-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Reportar Siniestro</h3>
+                        <p>Reporta un siniestro de forma rápida y sencilla</p>
+                        <button class="btn btn-secondary" onclick="reportClaim()">
+                            <i class="fas fa-exclamation-triangle"></i> Reportar
+                        </button>
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="section">
+            <div class="container">
+                <h2>Contáctanos</h2>
+                <p class="section-subtitle">Estamos aquí para resolver todas tus dudas</p>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Información de Contacto</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Dirección</strong>
+                                <p>Av. Principal 123, Col. Centro<br> Bogota , CP 06000</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <p>+57 (55) 1234-5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>info@insuramaweb.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horarios</strong>
+                                <p>Lun - Vie: 9:00 AM - 6:00 PM<br>Sáb: 9:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <h4>Síguenos</h4>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Envíanos un Mensaje</h3>
+                        <form id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nombreContacto">Nombre</label>
+                                    <input type="text" id="nombreContacto" name="nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="emailContacto">Email</label>
+                                    <input type="email" id="emailContacto" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="asunto">Asunto</label>
+                                <input type="text" id="asunto" name="asunto" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-shield-alt"></i> InsuramaPolizas</h3>
+                    <p>Tu tranquilidad es nuestra prioridad. Protegemos lo que más te importa con los mejores seguros del mercado.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio" onclick="showSection('inicio')">Inicio</a></li>
+                        <li><a href="#productos" onclick="showSection('productos')">Productos</a></li>
+                        <li><a href="#cotizaciones" onclick="showSection('cotizaciones')">Cotizaciones</a></li>
+                        <li><a href="#asistencia" onclick="showSection('asistencia')">Asistencia</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +57 (55) 1234-5678</p>
+                    <p><i class="fas fa-envelope"></i> info@insuramaweb.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 InsuramaPolizas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
